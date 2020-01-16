@@ -1,7 +1,7 @@
 # Http Service: Developer's Guide
 
 This document is both a development guideline and current state of things description. 
-It evolves together with the project and is constantly a subject for changes.
+It evolves together with the project and is constantly a subject for changes. Adjusted.
 
 **Table of contents:**  
 - [Project overview](#project-overview)  

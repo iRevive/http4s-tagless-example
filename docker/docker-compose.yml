@@ -3,12 +3,12 @@ services:
 
   service:
     restart: always
-    image: "http-service:latest"
+    image: "http4s-tagless-example:latest"
     environment:
       APPLICATION_HTTP_HOST: "0.0.0.0"
       APPLICATION_HTTP_PORT: 9000
       LOG_LEVEL: "INFO"
-      POSTGRESQL_URI: "jdbc:postgresql://postgres:5432/http-service"
+      POSTGRESQL_URI: "jdbc:postgresql://postgres:5432/http4s-tagless-example"
       POSTGRESQL_USER: "postgres"
       POSTGRESQL_PASSWORD: "admin"
     ports:
@@ -24,6 +24,6 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin
-      POSTGRES_DB: http-service
+      POSTGRES_DB: http4s-tagless-example
     ports:
       - 55432:5432

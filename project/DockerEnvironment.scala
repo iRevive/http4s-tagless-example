@@ -3,8 +3,8 @@ import scala.sys.process._
 
 object DockerEnvironment {
 
-  val DefaultNetwork: String = "http-service-network"
-  val ComposeProject: String = "http-service".replace("-", "_")
+  val DefaultNetwork: String = "http4s-tagless-example-network"
+  val ComposeProject: String = "http4s-tagless-example".replace("-", "_")
 
   def createEnv(network: Option[String]): DockerEnv = new DockerEnv(network.getOrElse(DefaultNetwork))
 
@@ -24,8 +24,8 @@ object DockerEnvironment {
 
     def javaOpts: Seq[String] = {
       val postgreUri = foldNetwork(
-        "jdbc:postgresql://localhost:55432/http-service",
-        "jdbc:postgresql://postgres:5432/http-service"
+        "jdbc:postgresql://localhost:55432/http4s-tagless-example",
+        "jdbc:postgresql://postgres:5432/http4s-tagless-example"
       )
 
       val (postgreUser, postgrePassword) = ("postgres", "admin")

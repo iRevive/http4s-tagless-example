@@ -14,7 +14,7 @@ docker pull $sbt_image || true
 
 echo "Releasing application"
 
-CI_NETWORK=http-service-ci-network
+CI_NETWORK=http4s-tagless-example-ci-network
 
 docker network rm $CI_NETWORK || true
 docker network create -d bridge $CI_NETWORK

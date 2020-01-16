@@ -2,7 +2,7 @@ import sbt._
 
 object Settings {
   val organization = "com.example"
-  val name         = "http-service"
+  val name         = "http4s-tagless-example"
 }
 
 object Versions {

@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin
-      POSTGRES_DB: http-service
+      POSTGRES_DB: http4s-tagless-example
     ports:
       - 55432:5432
 

@@ -16,7 +16,7 @@ sbt, docker, docker-compose, and cached jar dependencies. More info in [Dockerfi
 
 Execute in a `<root>` project folder:  
 ```sh
-$ docker build -f docker/dockerfiles/sbt/Dockerfile . -t http-service/ci-sbt:latest
+$ docker build -f docker/dockerfiles/sbt/Dockerfile . -t http4s-tagless-example/ci-sbt:latest
 ```
 
 ## <a name="semi-automated-release"></a> Semi-automated release

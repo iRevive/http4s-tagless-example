@@ -12,7 +12,7 @@ Create a file `application.conf` and attach it to the container via docker-compo
 ```
 services:
   api:
-    image: http-service:latest
+    image: http4s-tagless-example:latest
     ...
     volume:
       - ./application.conf:/opt/docker/conf/application.conf
@@ -35,7 +35,7 @@ Provide a necessary variable via docker-compose file:
 ```
 services:
   api:
-    image: http-service:latest
+    image: http4s-tagless-example:latest
     ...
     environment:
       - POSTGRESQL_URI=jdbc:postgresql://postgres:5432/postgres

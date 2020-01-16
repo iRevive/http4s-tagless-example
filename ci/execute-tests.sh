@@ -14,14 +14,14 @@ docker pull $sbt_image || true
 
 echo "Executing tests"
 
-docker network rm http-service-ci-network || true
-docker network create -d bridge http-service-ci-network
+docker network rm http4s-tagless-example-ci-network || true
+docker network create -d bridge http4s-tagless-example-ci-network
 
 docker run --rm \
     -v /var/run/docker.sock:/var/run/docker.sock \
     --mount src="$(pwd)",target=/opt/workspace,type=bind \
-    --network=http-service-ci-network \
-    -e DOCKER_NETWORK=http-service-ci-network \
+    --network=http4s-tagless-example-ci-network \
+    -e DOCKER_NETWORK=http4s-tagless-example-ci-network \
     -e DOCKER_REGISTRY_IMAGE=$CI_REGISTRY_IMAGE \
     $sbt_image \
     sbt ci

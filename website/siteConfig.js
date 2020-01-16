@@ -11,18 +11,18 @@
 const repoUrl = "https://your-repo.com";
 
 const siteConfig = {
-    title: "http-service",
-    tagline: "The http-service documentation",
+    title: "http4s-tagless-example",
+    tagline: "The http4s-tagless-example documentation",
     url: 'https://your-docusaurus-test-site.com', // Your website URL
-    baseUrl: '/http-service/',
-    projectName: "http-service",
+    baseUrl: '/http4s-tagless-example/',
+    projectName: "http4s-tagless-example",
 
     // For no header links in the top nav bar -> headerLinks: [],
     headerLinks: [
         { href: repoUrl, label: "Repository", external: true }
     ],
 
-    customDocsPath: "http-service-docs/target/mdoc",
+    customDocsPath: "http4s-tagless-example-docs/target/mdoc",
 
     /* Colors for website */
     colors: {

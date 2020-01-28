@@ -1,6 +1,6 @@
 package com.example.service.user.domain
 
-import com.example.util.logging.RenderInstances._
+import com.example.util.instances.render._
 import eu.timepit.refined.types.numeric.PosInt
 import doobie.refined.implicits._
 import doobie.util.{Get, Put}

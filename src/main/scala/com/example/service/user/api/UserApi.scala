@@ -7,8 +7,8 @@ import com.example.service.user.UserService
 import com.example.service.user.domain.{PersistedUser, User, UserId}
 import com.example.util.api.ApiResponse
 import com.example.util.error.{ErrorIdGen, ErrorRaise}
+import com.example.util.instances.circe._
 import com.example.util.syntax.json._
-import com.example.util.json.JsonCodecs._
 import eu.timepit.refined.types.numeric.PosInt
 import io.circe.refined._
 import io.circe.syntax._

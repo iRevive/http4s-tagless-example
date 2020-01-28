@@ -8,9 +8,8 @@ import cats.syntax.flatMap._
 import com.example.ApplicationResource.Application
 import com.example.util.error.{ErrorHandle, ErrorIdGen, RaisedError}
 import com.example.util.execution.{Eff, EffConcurrentEffect}
-import com.example.util.logging.RenderInstances._
+import com.example.util.instances.render._
 import com.example.util.logging.{Loggers, TraceId, TraceProvider}
-import com.example.util.syntax.logging._
 import io.odin.{Level, Logger}
 import io.odin.syntax._
 import com.typesafe.config.ConfigFactory
@@ -61,7 +60,8 @@ object Runner {
 
     private final def execute: Eff[ExitCode] =
       Loggers
-        .createContextLogger(Level.Info)
+        .createContextLogger[Eff](Loggers.envLogLevel.getOrElse(Level.Info))
+        .withAsync()
         .use(implicit logger => new Runner[Eff].run(ApplicationResource.default, job))
 
     def name: String

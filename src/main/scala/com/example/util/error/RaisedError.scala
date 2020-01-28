@@ -3,8 +3,8 @@ package com.example.util.error
 import cats.Functor
 import cats.syntax.functor._
 import com.example.util.Position
-import com.example.util.logging.RenderInstances._
-import io.odin.meta.Render
+import com.example.util.instances.render._
+import io.odin.meta.{Render, ToThrowable}
 
 @scalaz.deriving(Render)
 final case class RaisedError(error: AppError, pos: Position, errorId: String) {
@@ -23,5 +23,7 @@ object RaisedError {
     for {
       id <- ErrorIdGen[F].gen
     } yield RaisedError(error, pos, id)
+
+  implicit val raisedErrorToThrowable: ToThrowable[RaisedError] = _.toException
 
 }

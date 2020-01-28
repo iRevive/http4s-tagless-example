@@ -2,7 +2,7 @@ package com.example.persistence.postgres
 
 import com.example.util.execution.Retry
 import com.example.util.config.ConfigBoolean
-import com.example.util.logging.RenderInstances._
+import com.example.util.instances.render._
 import eu.timepit.refined.types.string.NonEmptyString
 import io.circe.Decoder
 import io.circe.generic.extras.Configuration

@@ -1,6 +1,6 @@
 package com.example.util.api
 
-import com.example.util.logging.RenderInstances._
+import com.example.util.instances.render._
 import eu.timepit.refined.types.numeric.PosInt
 import eu.timepit.refined.types.string.NonEmptyString
 import io.circe.Decoder

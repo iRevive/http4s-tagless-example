@@ -3,7 +3,7 @@ package com.example.persistence.postgres
 import java.time.Instant
 
 import cats.Eq
-import com.example.util.logging.RenderInstances._
+import com.example.util.instances.render._
 import io.odin.meta.Render
 
 @scalaz.deriving(Eq, Render)

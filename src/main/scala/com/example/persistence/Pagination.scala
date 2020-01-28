@@ -1,6 +1,6 @@
 package com.example.persistence
 
-import com.example.util.logging.RenderInstances._
+import com.example.util.instances.render._
 import eu.timepit.refined.auto._
 import eu.timepit.refined.types.numeric.{NonNegInt, PosInt}
 import io.odin.meta.Render

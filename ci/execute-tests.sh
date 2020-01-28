@@ -1,27 +1,29 @@
 #!/usr/bin/env bash
 
-if [ -z "$1" ]; then
+declare -r sbt_image="$1"
+
+if [ -z "$sbt_image" ]; then
   echo "CI SBT docker image name is missing"
   exit 1
 fi
 
-sbt_image=$1
-
 set -euf pipefail
 
 echo "Pulling CI SBT image $sbt_image"
-docker pull $sbt_image || true
+docker pull "$sbt_image" || true
 
 echo "Executing tests"
 
-docker network rm http4s-tagless-example-ci-network || true
-docker network create -d bridge http4s-tagless-example-ci-network
+declare -r ci-network="http4s-tagless-example-ci-network"
+
+docker network rm "$ci-network" || true
+docker network create -d bridge "$ci-network"
 
 docker run --rm \
     -v /var/run/docker.sock:/var/run/docker.sock \
     --mount src="$(pwd)",target=/opt/workspace,type=bind \
-    --network=http4s-tagless-example-ci-network \
-    -e DOCKER_NETWORK=http4s-tagless-example-ci-network \
-    -e DOCKER_REGISTRY_IMAGE=$CI_REGISTRY_IMAGE \
-    $sbt_image \
+    --network="$ci-network" \
+    -e DOCKER_NETWORK="$ci-network" \
+    -e DOCKER_REGISTRY_IMAGE="$CI_REGISTRY_IMAGE" \
+    "$sbt_image" \
     sbt ci

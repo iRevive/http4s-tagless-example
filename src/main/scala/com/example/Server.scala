@@ -4,12 +4,14 @@ import java.time.Instant
 
 import cats.data.Kleisli
 import cats.effect._
+import cats.mtl.instances.local._
 import com.example.ApplicationResource.{ApiModule, Application}
 import com.example.util.api.ApiConfig
 import com.example.util.execution.Eff
-import com.example.util.logging.RenderInstances._
+import com.example.util.instances.render._
+import com.example.util.logging.{Loggers, TraceProvider}
 import eu.timepit.refined.auto._
-import io.odin.Logger
+import io.odin.{Level, Logger}
 import io.odin.syntax._
 import org.http4s.server.blaze.BlazeServerBuilder
 
@@ -22,7 +24,7 @@ object Server extends Runner.Default {
 
 }
 
-class Server[F[_]: ConcurrentEffect: Timer] {
+class Server[F[_]: ConcurrentEffect: ContextShift: Timer: TraceProvider] {
 
   def serve: Kleisli[F, Application[F], ExitCode] = Kleisli { app =>
     bindHttpServer(app.apiModule).use(_ => ConcurrentEffect[F].never)
@@ -43,7 +45,7 @@ class Server[F[_]: ConcurrentEffect: Timer] {
     } yield ()
   }
 
-  private val logger: Logger[F] = io.odin.consoleLogger()
+  private val logger: Logger[F] = Loggers.createContextLogger(Level.Info)
 
 }
 // $COVERAGE-ON$

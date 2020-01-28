@@ -10,20 +10,20 @@ stages:
   - name: docs-update
     if: (branch = master) AND NOT fork
 
-scala_version_212: &scala_version_212 "2.12.10"
+scala_version_213: &scala_version_213 "2.13.1"
 
 jobs:
   include:
     # stage="test" if no stage is specified
-    - name: test 2.12
-      scala: *scala_version_212
+    - name: test 2.13
+      scala: *scala_version_213
       script: 
         - sbt ++$TRAVIS_SCALA_VERSION ci
       after_success:
         - bash <(curl -s https://codecov.io/bash)  
     - stage: docs-update
       name: microsite
-      scala: *scala_version_212
+      scala: *scala_version_213
       script:
         sbt ++$TRAVIS_SCALA_VERSION docs/docusaurusPublishGhpages
 

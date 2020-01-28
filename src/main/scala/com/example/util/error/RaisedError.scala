@@ -6,7 +6,7 @@ import com.example.util.Position
 import com.example.util.instances.render._
 import io.odin.meta.{Render, ToThrowable}
 
-@scalaz.deriving(Render)
+@scalaz.annotation.deriving(Render)
 final case class RaisedError(error: AppError, pos: Position, errorId: String) {
 
   def toException: RuntimeException =

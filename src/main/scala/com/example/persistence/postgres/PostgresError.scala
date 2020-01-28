@@ -4,7 +4,7 @@ import com.example.util.error.ThrowableSelect
 import com.example.util.instances.render._
 import io.odin.meta.Render
 
-@scalaz.deriving(Render)
+@scalaz.annotation.deriving(Render)
 sealed trait PostgresError
 
 object PostgresError {

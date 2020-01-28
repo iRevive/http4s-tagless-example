@@ -6,8 +6,8 @@ object Settings {
 }
 
 object Versions {
-  val scala               = "2.12.10"
-  val http4s              = "0.21.0-M6"
+  val scala               = "2.13.1"
+  val http4s              = "0.21.0-RC2"
   val circe               = "0.12.3"
   val circeExtras         = "0.12.2"
   val circeConfig         = "0.7.0"
@@ -29,7 +29,7 @@ object Versions {
   val catsScalatest       = "3.0.5"
   val catsEffectScalaTest = "0.4.0"
   val scalacheck          = "1.14.3"
-  val scalazDeriving      = "1.0.0"
+  val scalazDeriving      = "2.0.0-M3"
   val kindProjector       = "0.11.0"
   val betterMonadicFor    = "0.3.1"
 }

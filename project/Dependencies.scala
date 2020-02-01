@@ -22,7 +22,7 @@ object Versions {
   val newtype             = "0.4.3"
   val refined             = "0.9.12"
   val magnolia            = "0.12.6"
-  val odin                = "0.6.0"
+  val odin                = "0.6.1"
   val logback             = "1.2.3"
   val scalatest           = "3.1.0"
   val scalatestScalacheck = "3.1.0.1"

@@ -2,9 +2,8 @@ package com.example.util.error
 
 import cats.Functor
 import cats.syntax.functor._
-import com.example.util.Position
 import com.example.util.instances.render._
-import io.odin.meta.{Render, ToThrowable}
+import io.odin.meta.{Position, Render, ToThrowable}
 
 @scalaz.annotation.deriving(Render)
 final case class RaisedError(error: AppError, pos: Position, errorId: String) {
@@ -25,5 +24,7 @@ object RaisedError {
     } yield RaisedError(error, pos, id)
 
   implicit val raisedErrorToThrowable: ToThrowable[RaisedError] = _.toException
+
+  implicit val positionRender: Render[Position] = p => s"${p.enclosureName}:${p.line.toString}"
 
 }

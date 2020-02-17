@@ -3,11 +3,11 @@ package com.example.util.api
 import cats.mtl.implicits._
 import com.example.persistence.postgres.PostgresError
 import com.example.test.BaseSpec
-import com.example.util.Position
 import com.example.util.error.{AppError, RaisedError}
 import com.example.util.logging.Loggers
 import io.circe.syntax._
 import io.odin.Level
+import io.odin.meta.Position
 import org.http4s._
 import org.http4s.circe._
 import org.http4s.headers.`Content-Type`
@@ -41,7 +41,7 @@ class ErrorHandlerSpec extends BaseSpec {
     "handle checked error" in EffectAssertion() {
       val error = RaisedError(
         PostgresError.connectionAttemptTimeout("error").inject[AppError],
-        Position.generate,
+        Position.derivePosition,
         "test"
       )
 

@@ -12,7 +12,7 @@ object Versions {
   val circeExtras         = "0.13.0"
   val circeConfig         = "0.7.0"
   val cats                = "2.1.1"
-  val catsEffect          = "2.1.1"
+  val catsEffect          = "2.1.2"
   val catsMTL             = "0.7.0"
   val catsRetry           = "1.1.0"
   val monix               = "3.1.0"

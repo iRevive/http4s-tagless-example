@@ -18,7 +18,7 @@ object Versions {
   val monix               = "3.1.0"
   val sup                 = "0.7.0"
   val doobie              = "0.8.8"
-  val flyway              = "6.3.0"
+  val flyway              = "6.3.1"
   val newtype             = "0.4.3"
   val refined             = "0.9.13"
   val magnolia            = "0.12.8"

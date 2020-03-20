@@ -10,7 +10,7 @@ object Versions {
   val http4s              = "0.21.1"
   val circe               = "0.13.0"
   val circeExtras         = "0.13.0"
-  val circeConfig         = "0.7.0"
+  val circeConfig         = "0.8.0"
   val cats                = "2.1.1"
   val catsEffect          = "2.1.2"
   val catsMTL             = "0.7.1"

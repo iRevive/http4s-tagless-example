@@ -7,3 +7,4 @@ addSbtPlugin("io.github.davidgregory084" % "sbt-tpolecat"              % "0.1.10
 addSbtPlugin("com.github.cb372"          % "sbt-explicit-dependencies" % "0.2.12")
 addSbtPlugin("com.timushev.sbt"          % "sbt-updates"               % "0.5.0")
 addSbtPlugin("org.scalameta"             % "sbt-mdoc"                  % "2.1.1")
+addSbtPlugin("ch.epfl.scala"             % "sbt-missinglink"           % "0.3.0")

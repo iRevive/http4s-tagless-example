@@ -21,7 +21,7 @@ object Versions {
   val flyway              = "6.3.3"
   val newtype             = "0.4.3"
   val refined             = "0.9.13"
-  val magnolia            = "0.14.3"
+  val magnolia            = "0.14.4"
   val odin                = "0.7.0"
   val logback             = "1.2.3"
   val scalatest           = "3.1.1"

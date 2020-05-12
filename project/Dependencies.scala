@@ -19,12 +19,12 @@ object Versions {
   val sup                 = "0.7.0"
   val doobie              = "0.9.0"
   val flyway              = "6.4.1"
-  val newtype             = "0.4.3"
+  val newtype             = "0.4.4"
   val refined             = "0.9.14"
   val magnolia            = "0.16.0"
   val odin                = "0.7.0"
   val logback             = "1.2.3"
-  val scalatest           = "3.1.1"
+  val scalatest           = "3.1.2"
   val scalatestScalacheck = "3.1.1.1"
   val catsScalatest       = "3.0.5"
   val catsEffectScalaTest = "0.4.0"
@@ -61,17 +61,17 @@ object Dependencies {
     "org.tpolecat"         %% "doobie-hikari"        % Versions.doobie,
     "org.tpolecat"         %% "doobie-refined"       % Versions.doobie,
     "org.tpolecat"         %% "doobie-postgres"      % Versions.doobie,
-    "org.flywaydb"         % "flyway-core"           % Versions.flyway,
+    "org.flywaydb"          % "flyway-core"          % Versions.flyway,
     "com.propensive"       %% "magnolia"             % Versions.magnolia,
     "com.github.valskalla" %% "odin-extras"          % Versions.odin,
-    "ch.qos.logback"       % "logback-classic"       % Versions.logback,
-    "org.tpolecat"         %% "doobie-scalatest"     % Versions.doobie % "it",
-    "org.scalatest"        %% "scalatest"            % Versions.scalatest % "it,test",
+    "ch.qos.logback"        % "logback-classic"      % Versions.logback,
+    "org.tpolecat"         %% "doobie-scalatest"     % Versions.doobie              % "it",
+    "org.scalatest"        %% "scalatest"            % Versions.scalatest           % "it,test",
     "org.scalatestplus"    %% "scalacheck-1-14"      % Versions.scalatestScalacheck % "it,test",
-    "com.ironcorelabs"     %% "cats-scalatest"       % Versions.catsScalatest % "it,test",
+    "com.ironcorelabs"     %% "cats-scalatest"       % Versions.catsScalatest       % "it,test",
     "com.codecommit"       %% CatsEffectScalaTest    % Versions.catsEffectScalaTest % "it,test",
-    "org.scalacheck"       %% "scalacheck"           % Versions.scalacheck % "it,test",
-    "eu.timepit"           %% "refined-scalacheck"   % Versions.refined % "it,test"
+    "org.scalacheck"       %% "scalacheck"           % Versions.scalacheck          % "it,test",
+    "eu.timepit"           %% "refined-scalacheck"   % Versions.refined             % "it,test"
   )
 
 }

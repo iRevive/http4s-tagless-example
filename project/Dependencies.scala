@@ -25,7 +25,7 @@ object Versions {
   val odin                = "0.7.0"
   val logback             = "1.2.3"
   val scalatest           = "3.1.2"
-  val scalatestScalacheck = "3.1.1.1"
+  val scalatestScalacheck = "3.1.2.0"
   val catsScalatest       = "3.0.5"
   val catsEffectScalaTest = "0.4.0"
   val scalacheck          = "1.14.3"

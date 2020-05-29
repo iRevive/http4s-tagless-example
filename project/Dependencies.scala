@@ -18,7 +18,7 @@ object Versions {
   val monix               = "3.2.1"
   val sup                 = "0.7.0"
   val doobie              = "0.9.0"
-  val flyway              = "6.4.2"
+  val flyway              = "6.4.3"
   val newtype             = "0.4.4"
   val refined             = "0.9.14"
   val magnolia            = "0.16.0"
@@ -29,7 +29,7 @@ object Versions {
   val catsScalatest       = "3.0.5"
   val catsEffectScalaTest = "0.4.0"
   val scalacheck          = "1.14.3"
-  val scalazDeriving      = "2.0.0-M4"
+  val scalazDeriving      = "2.0.0-M5"
   val kindProjector       = "0.11.0"
   val betterMonadicFor    = "0.3.1"
 }

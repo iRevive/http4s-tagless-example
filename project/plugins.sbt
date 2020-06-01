@@ -2,7 +2,7 @@ addSbtPlugin("com.typesafe.sbt"          % "sbt-native-packager"       % "1.7.2"
 addSbtPlugin("com.github.gseitz"         % "sbt-release"               % "1.0.13")
 addSbtPlugin("org.scoverage"             % "sbt-scoverage"             % "1.6.1")
 addSbtPlugin("org.scalameta"             % "sbt-scalafmt"              % "2.4.0")
-addSbtPlugin("org.wartremover"           % "sbt-wartremover"           % "2.4.8")
+addSbtPlugin("org.wartremover"           % "sbt-wartremover"           % "2.4.9")
 addSbtPlugin("io.github.davidgregory084" % "sbt-tpolecat"              % "0.1.11")
 addSbtPlugin("com.github.cb372"          % "sbt-explicit-dependencies" % "0.2.13")
 addSbtPlugin("com.timushev.sbt"          % "sbt-updates"               % "0.5.1")

@@ -2,11 +2,13 @@ import sbtrelease.ReleaseStateTransformations._
 
 lazy val root = project
   .in(file("."))
-  .enablePlugins(JavaAppPackaging, AshScriptPlugin, IntegrationEnv)
+  .enablePlugins(JavaAppPackaging, AshScriptPlugin, IntegrationEnvPlugin)
+  .configs(IntegrationTest)
   .settings(commonSettings)
   .settings(scalazDerivingSettings)
   .settings(wartRemoverSettings)
   .settings(testSettings)
+  .settings(integrationTestSettings)
   .settings(buildSettings)
   .settings(dockerSettings)
   .settings(releaseSettings)
@@ -51,6 +53,36 @@ lazy val testSettings = Seq(
   Test / fork              := true,
   Test / parallelExecution := true
 )
+
+lazy val integrationTestSettings = Seq(
+  IntegrationTest / testOptions       := integrationEnvTestOpts.value,
+  IntegrationTest / fork              := true,
+  IntegrationTest / parallelExecution := false,
+  IntegrationTest / javaOptions := {
+    val mode = integrationEnvMode.value
+
+    val postgreUri = mode.fold(
+      "jdbc:postgresql://postgres:5432/http4s-tagless-example",
+      "jdbc:postgresql://localhost:55432/http4s-tagless-example"
+    )
+
+    val (postgreUser, postgrePassword) = ("postgres", "admin")
+
+    Seq(
+      s"-DPOSTGRESQL_URI=$postgreUri",
+      s"-DPOSTGRESQL_USER=$postgreUser",
+      s"-DPOSTGRESQL_PASSWORD=$postgrePassword"
+    )
+  },
+  integrationEnvProvider := {
+    val projectName        = name.value
+    val composeProjectName = s"$projectName-it-env"
+    val dockerComposeFile  = sourceDirectory.value / "it" / "docker" / "docker-compose.yml"
+    val network            = sys.env.get("DOCKER_NETWORK").orElse(Some(s"$projectName-network"))
+
+    new DockerComposeEnvProvider(composeProjectName, dockerComposeFile, network)
+  }
+) ++ Defaults.itSettings ++ inConfig(IntegrationTest)(ScalafmtPlugin.scalafmtConfigSettings)
 
 lazy val buildSettings = Seq(
   Universal / packageName                := name.value,

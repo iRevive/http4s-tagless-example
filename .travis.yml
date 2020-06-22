@@ -2,6 +2,10 @@ sudo: false
 language: scala
 jdk: openjdk11
 
+env:
+  jobs:
+    - CI=true
+
 before_install:
   - git fetch --tags
 

@@ -2,10 +2,6 @@ sudo: false
 language: scala
 jdk: openjdk11
 
-env:
-  jobs:
-    - CI=true
-
 before_install:
   - git fetch --tags
 
@@ -22,7 +18,7 @@ jobs:
     - name: test 2.13
       scala: *scala_version_213
       script: 
-        - sbt ++$TRAVIS_SCALA_VERSION ci
+        - sbt 'set insideCI := false' ++$TRAVIS_SCALA_VERSION ci
       after_success:
         - bash <(curl -s https://codecov.io/bash)  
     - stage: docs-update

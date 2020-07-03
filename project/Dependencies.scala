@@ -7,7 +7,7 @@ object Settings {
 
 object Versions {
   val scala               = "2.13.1"
-  val http4s              = "0.21.4"
+  val http4s              = "0.21.6"
   val circe               = "0.13.0"
   val circeExtras         = "0.13.0"
   val circeConfig         = "0.8.0"
@@ -18,7 +18,7 @@ object Versions {
   val monix               = "3.2.2"
   val sup                 = "0.8.0"
   val doobie              = "0.9.0"
-  val flyway              = "6.4.4"
+  val flyway              = "6.5.0"
   val newtype             = "0.4.4"
   val refined             = "0.9.14"
   val magnolia            = "0.16.0"

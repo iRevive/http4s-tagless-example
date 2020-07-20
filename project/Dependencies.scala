@@ -20,7 +20,7 @@ object Versions {
   val doobie              = "0.9.0"
   val flyway              = "6.5.1"
   val newtype             = "0.4.4"
-  val refined             = "0.9.14"
+  val refined             = "0.9.15"
   val magnolia            = "0.16.0"
   val odin                = "0.7.0"
   val logback             = "1.2.3"

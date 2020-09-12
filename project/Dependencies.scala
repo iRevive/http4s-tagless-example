@@ -17,7 +17,7 @@ object Versions {
   val catsRetry           = "1.1.1"
   val monix               = "3.2.2+45-5c6c8b9e"
   val sup                 = "0.8.0"
-  val doobie              = "0.9.0"
+  val doobie              = "0.9.2"
   val flyway              = "6.5.5"
   val newtype             = "0.4.4"
   val refined             = "0.9.15"

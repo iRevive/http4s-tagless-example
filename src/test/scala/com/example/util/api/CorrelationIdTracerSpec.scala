@@ -1,7 +1,6 @@
 package com.example.util.api
 
-import cats.effect.concurrent.MVar
-import cats.mtl.implicits._
+import cats.effect.concurrent.{MVar, MVar2}
 import cats.syntax.functor._
 import com.example.test.BaseSpec
 import com.example.util.logging.TraceId./
@@ -44,7 +43,7 @@ class CorrelationIdTracerSpec extends BaseSpec {
 
   }
 
-  private def contextRecorder(m: MVar[Eff, TraceId]): HttpRoutes[Eff] = {
+  private def contextRecorder(m: MVar2[Eff, TraceId]): HttpRoutes[Eff] = {
     import org.http4s.dsl.impl.{->, /, Root}
 
     HttpRoutes.of[Eff] { case GET -> Root / "api" / "endpoint" / _ =>

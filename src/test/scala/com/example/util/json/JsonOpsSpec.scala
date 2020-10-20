@@ -1,6 +1,7 @@
 package com.example.util.json
 
 import cats.mtl.implicits._
+import cats.mtl.Handle.handleKleisli
 import cats.data.NonEmptyList
 import com.example.test.BaseSpec
 import com.example.util.syntax.json._

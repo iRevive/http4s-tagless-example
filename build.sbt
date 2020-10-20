@@ -59,12 +59,11 @@ lazy val integrationTestSettings = Seq(
   IntegrationTest / fork              := true,
   IntegrationTest / parallelExecution := false,
   IntegrationTest / javaOptions := {
-    val mode = integrationEnvMode.value
+    val externalNetwork = sys.env.isDefinedAt("DOCKER_NETWORK")
 
-    val postgreUri = mode.fold(
-      "jdbc:postgresql://postgres:5432/http4s-tagless-example",
-      "jdbc:postgresql://localhost:55432/http4s-tagless-example"
-    )
+    val postgreUri =
+      if (externalNetwork) "jdbc:postgresql://postgres:5432/http4s-tagless-example"
+      else "jdbc:postgresql://localhost:55432/http4s-tagless-example"
 
     val (postgreUser, postgrePassword) = ("postgres", "admin")
 

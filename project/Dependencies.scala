@@ -6,30 +6,30 @@ object Settings {
 }
 
 object Versions {
-  val scala               = "2.13.1"
-  val http4s              = "0.21.7"
+  val scala               = "2.13.3"
+  val http4s              = "0.21.8"
   val circe               = "0.13.0"
   val circeExtras         = "0.13.0"
   val circeConfig         = "0.8.0"
   val cats                = "2.2.0"
-  val catsEffect          = "2.1.4"
-  val catsMTL             = "0.7.1"
-  val catsRetry           = "1.1.1"
-  val monix               = "3.2.2+45-5c6c8b9e"
+  val catsEffect          = "2.2.0"
+  val catsMTL             = "1.0.0"
+  val catsRetry           = "2.0.0"
+  val monix               = "3.2.2"
   val sup                 = "0.8.0"
   val doobie              = "0.9.2"
-  val flyway              = "6.5.5"
+  val flyway              = "7.0.4"
   val newtype             = "0.4.4"
-  val refined             = "0.9.15"
+  val refined             = "0.9.17"
   val magnolia            = "0.17.0"
-  val odin                = "0.8.1"
+  val odin                = "0.9.1"
   val logback             = "1.2.3"
   val scalatest           = "3.2.2"
   val scalatestScalacheck = "3.2.2.0"
   val catsScalatest       = "3.0.8"
   val catsEffectScalaTest = "0.4.1"
   val scalacheck          = "1.14.3"
-  val scalazDeriving      = "2.0.0-M5"
+  val scalazDeriving      = "2.0.0-M6"
   val kindProjector       = "0.11.0"
   val betterMonadicFor    = "0.3.1"
 }
@@ -45,7 +45,7 @@ object Dependencies {
     "io.monix"             %% "monix"                % Versions.monix,
     "org.typelevel"        %% "cats-core"            % Versions.cats,
     "org.typelevel"        %% "cats-effect"          % Versions.catsEffect,
-    "org.typelevel"        %% "cats-mtl-core"        % Versions.catsMTL,
+    "org.typelevel"        %% "cats-mtl"             % Versions.catsMTL,
     "com.github.cb372"     %% "cats-retry-mtl"       % Versions.catsRetry,
     "org.scalaz"           %% "deriving-macro"       % Versions.scalazDeriving,
     "io.circe"             %% "circe-generic"        % Versions.circe,

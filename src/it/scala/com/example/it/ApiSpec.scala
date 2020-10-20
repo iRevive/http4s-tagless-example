@@ -1,6 +1,6 @@
 package com.example.it
 
-import cats.mtl.implicits._
+import cats.mtl.Handle.handleKleisli
 import com.example.ApplicationResource.Application
 import com.example.util.api.ApiResponse
 import com.example.util.syntax.json._

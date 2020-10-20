@@ -1,6 +1,7 @@
 package com.example.util.api
 
 import cats.mtl.implicits._
+import cats.mtl.Handle.handleKleisli
 import com.example.persistence.postgres.PostgresError
 import com.example.test.BaseSpec
 import com.example.util.error.{AppError, RaisedError}

@@ -28,7 +28,7 @@ object Versions {
   val scalatestScalacheck = "3.2.2.0"
   val catsScalatest       = "3.0.8"
   val catsEffectScalaTest = "0.4.1"
-  val scalacheck          = "1.15.0"
+  val scalacheck          = "1.15.1"
   val scalazDeriving      = "2.0.0-M6"
   val kindProjector       = "0.11.0"
   val betterMonadicFor    = "0.3.1"

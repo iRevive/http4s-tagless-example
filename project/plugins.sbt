@@ -6,6 +6,6 @@ addSbtPlugin("org.wartremover"           % "sbt-wartremover"           % "2.4.13
 addSbtPlugin("io.github.davidgregory084" % "sbt-tpolecat"              % "0.1.16")
 addSbtPlugin("com.github.cb372"          % "sbt-explicit-dependencies" % "0.2.13")
 addSbtPlugin("com.timushev.sbt"          % "sbt-updates"               % "0.5.1")
-addSbtPlugin("org.scalameta"             % "sbt-mdoc"                  % "2.2.13")
+addSbtPlugin("org.scalameta"             % "sbt-mdoc"                  % "2.2.17")
 addSbtPlugin("ch.epfl.scala"             % "sbt-missinglink"           % "0.3.1")
 addSbtPlugin("io.github.irevive"         % "sbt-integration-env"       % "0.1.0")

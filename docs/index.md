@@ -20,6 +20,6 @@ TBD
 ## <a name="development-requirements"></a> Development requirements
 1) Java 11
 2) Scala 2.13.4
-3) SBT 1.4.7  
+3) SBT 1.4.9  
 4) Docker
 5) Docker-compose  

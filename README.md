@@ -1,6 +1,6 @@
 # Http Tagless Service
 
-[![Build Status](https://travis-ci.org/iRevive/http4s-tagless-template.g8.svg?branch=master)](https://travis-ci.org/iRevive/http4s-tagless-template.g8)
+[![Build & Test](https://github.com/iRevive/http4s-tagless-example/actions/workflows/build.yml/badge.svg)](https://github.com/iRevive/http4s-tagless-example/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/iRevive/http4s-tagless-example/branch/master/graph/badge.svg)](https://codecov.io/gh/iRevive/http4s-tagless-example)
 
 Published microsite with documentation: https://irevive.github.io/http4s-tagless-example.
